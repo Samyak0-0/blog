@@ -1,10 +1,15 @@
-import React from 'react'
-import styles from "./pagination.module.css"
+"use client";
 
-const Pagination = () => {
+import React from "react";
+import styles from "./pagination.module.css";
+import { useRouter } from "next/navigation";
+
+const Pagination = ({ page, hasPrev, hasNext }) => {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
-      {/* <button
+      <button
         className={styles.button}
         disabled={!hasPrev}
         onClick={() => router.push(`?page=${page - 1}`)}
@@ -17,9 +22,9 @@ const Pagination = () => {
         onClick={() => router.push(`?page=${page + 1}`)}
       >
         Next
-      </button> */}
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;
