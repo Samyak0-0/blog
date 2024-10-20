@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch("https://blog-app-nine-ecru.vercel.app/api/categories", {
     cache: "default",
   });
-
+  blog-app-nine-ecru.vercel.app
   if (!res.ok) {
     throw new Error("Failed");
   }
