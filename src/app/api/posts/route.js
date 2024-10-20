@@ -23,6 +23,18 @@ export const GET = async (req) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
+
+    if (cat === "views") {
+      const posts = await prisma.post.findMany({
+        orderBy: {
+          views: "desc",
+        },
+        take: 4,
+      });
+      console.log(posts)
+      return new NextResponse(JSON.stringify({ posts }, { status: 200 }));
+    }
+
     return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }));
   } catch (err) {
     console.log(err);
@@ -34,7 +46,6 @@ export const GET = async (req) => {
 
 // CREATE A POST
 export const POST = async (req) => {
-  
   const session = await getAuthSession();
 
   if (!session) {

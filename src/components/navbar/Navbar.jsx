@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import styles from "./navbar.module.css";
 import Image from "next/image";
@@ -14,12 +16,11 @@ const Navbar = () => {
         <Image src="/youtube.png" alt="youtube" width={24} height={24} />
         <Image src="/mail.png" alt="mail" width={24} height={24} />
       </div>
-      <div className={styles.logo}>My Blog</div>
+      <Link href="/" className={styles.logo}>My Blog</Link>
       <div className={styles.links}>
         <ThemeToggle />
-        <Link href="/" className={styles.link}>Homepage</Link>
-        <Link href="/" className={styles.link}>Contact</Link>
-        <Link href="/" className={styles.link}>About</Link>
+        <Link href="/#footer_" className={styles.link}>Contact</Link>
+        <Link href="/about" className={styles.link}>About</Link>
         <AuthLinks />
       </div>
     </div>
