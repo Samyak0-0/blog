@@ -7,7 +7,7 @@ const getData = async () => {
   const res = await fetch("https://blog-app-nine-ecru.vercel.app/api/categories", {
     cache: "default",
   });
-  blog-app-nine-ecru.vercel.app
+  
   if (!res.ok) {
     throw new Error("Failed");
   }
