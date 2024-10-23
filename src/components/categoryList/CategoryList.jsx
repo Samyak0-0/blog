@@ -15,7 +15,6 @@ const getData = async () => {
   return res.json();
 };
 
-//cat = syle needs change . . . . .
 
 const CategoryList = async () => {
   const data = await getData();
