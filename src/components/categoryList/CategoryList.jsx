@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const getData = async () => {
-  const res = await fetch("https://blog-app-nine-ecru.vercel.app/api/categories", {
+  const res = await fetch("https://blog-app-nine-ecru.vercel.app/api/categories?cat_no=6", {
     cache: "no-store",
   });
   
@@ -19,7 +19,7 @@ const getData = async () => {
 
 const CategoryList = async () => {
   const data = await getData();
-  console.log(data)
+  
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>

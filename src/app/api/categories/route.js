@@ -1,12 +1,17 @@
 import prisma from "@/utilities/connect";
 import { NextResponse } from "next/server";
 
-export const GET = async () => {
+export const GET = async (req) => {
+
+  const searchParams = req.nextUrl.searchParams;
+  const cat = searchParams.get('cat_no');
+  const cat_no = parseInt(cat);
+
   try {
     const categories = await prisma.category.findMany({
-      take: 6,
+      take: cat_no,
       orderBy: {
-        id: 'desc',
+        id: 'asc',
       }
     });
 
