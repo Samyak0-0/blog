@@ -13,9 +13,15 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { app } from "@/utilities/firebase";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
+// import ReactQuill from "react-quill";
+
+const DynamicQuill = dynamic(() => import('react-quill'), {
+  ssr: false,
+});
 
 const WritePage = () => {
+
   const { status } = useSession();
 
   const router = useRouter();
@@ -138,7 +144,7 @@ const WritePage = () => {
           </div>
         )}
     
-        <ReactQuill
+        <DynamicQuill
           className={styles.textArea}
           theme="bubble"
           value={value}

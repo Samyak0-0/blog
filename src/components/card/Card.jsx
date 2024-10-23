@@ -8,11 +8,7 @@ const Card = ({ key, item }) => {
 
   return (
     <div className={styles.container} key={key}>
-      {item.img && (
-        <div className={styles.imageContainer}>
-          <Image src={item.img} alt="" fill className={styles.image} />
-        </div>
-      )}
+      
       <div className={styles.textContainer}>
         <div className={styles.detail}>
           <span className={styles.date}>
@@ -32,6 +28,13 @@ const Card = ({ key, item }) => {
           Read More
         </Link>
       </div>
+
+      {item.img && (
+        <div className={styles.imageContainer}>
+          <Image src={item.img} alt="" fill className={styles.image} />
+        </div>
+      )}
+      
     </div>
   );
 };
