@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const getData = async () => {
   const res = await fetch("https://blog-app-nine-ecru.vercel.app/api/categories", {
-    cache: "default",
+    cache: "no-store",
   });
   
   if (!res.ok) {
@@ -26,7 +26,7 @@ const CategoryList = async () => {
       <div className={styles.categories}>
         {data?.map((item) => (
           <Link
-            href="/blog?cat=style"
+            href={`/blog?cat=${item.slug}`}
             className={`${styles.category} ${styles[item.slug]}`}
             key={item._id}
           >
