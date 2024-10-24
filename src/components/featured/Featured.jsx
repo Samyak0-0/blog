@@ -19,7 +19,7 @@ const Featured = () => {
           </h1>
           <p className={styles.postDesc}>
             This is a blog developed by using Next JS. <br/>
-            You can Login into your own google accounts to share you own posts and comment on others' posts.<br/>
+            You can Login into your own google accounts to share you own posts and comment on others&apos; posts.<br/>
             Some functionalities of this blog are still yet to be developed such as . . . 
           </p>
           <Link href={`/posts/some-information-status-about-the-site`}>
