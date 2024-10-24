@@ -60,9 +60,15 @@
   .title {
     font-size: 64px;
   }
-
+  .post {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
   .imgContainer {
-    display: none;
+    width: 97%;
+    height: 50vh;
   }
 }
 
@@ -75,5 +81,8 @@
 @media screen and (max-width: 640px) {
   .title {
     font-size: 36px;
+  }
+  .post {
+    height: 100vh;
   }
 }

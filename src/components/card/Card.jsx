@@ -4,8 +4,6 @@ import Link from "next/link";
 
 const Card = ({ key, item }) => {
 
-  console.log(item?.desc)
-
   return (
     <div className={styles.container} key={key}>
       
@@ -22,7 +20,7 @@ const Card = ({ key, item }) => {
         {/* <p className={styles.desc}>{item.desc.substring(0, 60)}</p> */}
         <div
           className={styles.desc}
-          dangerouslySetInnerHTML={{ __html: item?.desc }}
+          dangerouslySetInnerHTML={{ __html: item?.desc.substring(0,100) + " . . ." }}
         />
         <Link href={`/posts/${item.slug}`} className={styles.link}>
           Read More

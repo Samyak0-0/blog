@@ -11,7 +11,7 @@ const Featured = () => {
       </h1>
       <div className={styles.post}>
         <div className={styles.imgContainer} style={{border: "2px solid var(--textColor)", borderRadius: "12px"}}>
-          <Image src="/blog.png" alt="" fill className={styles.image} />
+          <Image src="/blog.PNG" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>

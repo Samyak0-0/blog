@@ -87,3 +87,13 @@ a {
 .quill > .ql-container > .ql-editor.ql-blank::before {
   color: #b3b3b1;
 }
+
+div > img {
+ filter: brightness(.8);
+ border-radius: 10px;
+ transition: all .3s ease-out;
+}
+div > img:hover {
+  scale: 1.02;
+  filter: brightness(.95);
+}

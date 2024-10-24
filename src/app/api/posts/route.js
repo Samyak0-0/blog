@@ -16,6 +16,9 @@ export const GET = async (req) => {
     where: {
       ...(cat && { catSlug: cat }),
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   };
 
   try {
@@ -23,17 +26,6 @@ export const GET = async (req) => {
       prisma.post.findMany(query),
       prisma.post.count({ where: query.where }),
     ]);
-
-    if (cat === "views") {
-      const posts = await prisma.post.findMany({
-        orderBy: {
-          views: "desc",
-        },
-        take: 4,
-      });
-      console.log(posts)
-      return new NextResponse(JSON.stringify({ posts }, { status: 200 }));
-    }
 
     return new NextResponse(JSON.stringify({ posts, count }, { status: 200 }));
   } catch (err) {
