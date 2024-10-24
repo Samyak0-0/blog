@@ -14,14 +14,14 @@ import {
 } from "firebase/storage";
 import { app } from "@/utilities/firebase";
 import dynamic from "next/dynamic";
+import { CiImageOn } from "react-icons/ci";
 // import ReactQuill from "react-quill";
 
-const DynamicQuill = dynamic(() => import('react-quill'), {
+const DynamicQuill = dynamic(() => import("react-quill"), {
   ssr: false,
 });
 
 const WritePage = () => {
-
   const { status } = useSession();
 
   const router = useRouter();
@@ -110,40 +110,35 @@ const WritePage = () => {
         className={styles.input}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <select className={styles.select} onChange={(e) => setCatSlug(e.target.value)}>
-        <option value="style">style</option>
-        <option value="fashion">fashion</option>
-        <option value="food">food</option>
-        <option value="culture">culture</option>
-        <option value="travel">travel</option>
+      <select
+        className={styles.select}
+        onChange={(e) => setCatSlug(e.target.value)}
+      >
+        <option value="web-dev">web dev</option>
+        <option value="front-end">front end</option>
+        <option value="app-dev">app dev</option>
+        <option value="back-end">back end</option>
+        <option value="ai">AI</option>
+        <option value="robotics">robotics</option>
+        <option value="tech">tech</option>
         <option value="coding">coding</option>
+        <option value="others">Others</option>
       </select>
       <div className={styles.editor}>
-        <button className={styles.button} onClick={() => setOpen(!open)}>
-          <Image src="/plus.png" alt="" width={16} height={16} />
-        </button>
-        {open && (
-          <div className={styles.add}>
-            <input
-              type="file"
-              id="image"
-              onChange={(e) => setFile(e.target.files[0])}
-              style={{ display: "none" }}
-            />
-            <button className={styles.addButton}>
-              <label htmlFor="image">
-                <Image src="/image.png" alt="" width={16} height={16} />
-              </label>
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/external.png" alt="" width={16} height={16} />
-            </button>
-            <button className={styles.addButton}>
-              <Image src="/video.png" alt="" width={16} height={16} />
-            </button>
-          </div>
-        )}
-    
+        <div className={styles.add}>
+          <input
+            type="file"
+            id="image"
+            onChange={(e) => setFile(e.target.files[0])}
+            style={{ display: "none" }}
+          />
+          <button className={styles.addButton}>
+            <label htmlFor="image">
+              <CiImageOn size={22} style={{ color: "var(--textColor)", cursor: "pointer"}} />
+            </label>
+          </button>
+        </div>
+
         <DynamicQuill
           className={styles.textArea}
           theme="bubble"

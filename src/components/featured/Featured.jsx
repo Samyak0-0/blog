@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Featured = () => {
   return (
@@ -9,20 +10,21 @@ const Featured = () => {
         <b>Hey, Samyak here!</b> Discover my stories and share your own unique ideas!
       </h1>
       <div className={styles.post}>
-        <div className={styles.imgContainer}>
-          <Image src="/p1.jpeg" alt="" fill className={styles.image} />
+        <div className={styles.imgContainer} style={{border: "2px solid var(--textColor)", borderRadius: "12px"}}>
+          <Image src="/blog.png" alt="" fill className={styles.image} />
         </div>
         <div className={styles.textContainer}>
           <h1 className={styles.postTitle}>
-            Lorem ipsum dolor sit amet alim consectetur adipisicing elit.
+            Some Information & Status about the site!!
           </h1>
           <p className={styles.postDesc}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Cupiditate, quam nisi magni ea laborum inventore voluptatum
-            laudantium repellat ducimus unde aspernatur fuga. Quo, accusantium
-            quisquam! Harum unde sit culpa debitis.
+            This is a blog developed by using Next JS. <br/>
+            You can Login into your own google accounts to share you own posts and comment on others' posts.<br/>
+            Some functionalities of this blog are still yet to be developed such as . . . 
           </p>
-          <button className={styles.button}>Read More</button>
+          <Link href={`/posts/some-information-status-about-the-site`}>
+            <button className={styles.button}>Read More</button>
+          </Link>
         </div>
       </div>
     </div>
