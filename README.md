@@ -1,34 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Blog App
 
-First, run the development server:
+This blog page allows users log in with Google to create, share and comment on posts, built with Next.js, MongoDB, Prisma, OAuth, and Firebase. With a sleek and simple UI, Users can explore posts by category, share their thoughts and get feedback easily.
+
+
+> [!NOTE]
+> Users can only login to the application via their google accounts, to be able to post blogs and write comments.
+
+## Project Overview
+
+- **Framework**: Next.js
+- **Database**: Prisma, Mongo DB, Firebase
+- **Deployment**: Vercel
+
+
+
+## Live App
+
+[Visit Blog](https://blog-app-nine-ecru.vercel.app)
+
+
+## Features
+
+- **Google Authentication**: Secure login and registration.
+- **Professional Text Editing**: Compose posts with a professional-text editor.
+- **Image handling**: Easily upload pictures for your blog.
+- **Responsive Design**: Optimized for all screen sizes.
+
+## Run Locally
+
+### Prerequisites
+
+- Node.js (v14+ recommended)
+- npm or yarn
+
+### Steps
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+  git clone https://github.com/Samyak0-0/blog.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Build the Application
+```bash
+  npm run build
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+Run the development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Open [localhost:3000](http://localhost:3000) to view in the browser.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment Variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To run this project, you will need to add the following environment variables to your .env file
+
+`GOOGLE_ID`
+`GOOGLE_SECRET`
+`NEXTAUTH_URL`
+`NEXTAUTH_SECRET`
+`DATABASE_URL`
+`FIREBASE`
+
+## License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License. 
